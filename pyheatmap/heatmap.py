@@ -15,7 +15,7 @@ import os
 import random
 from PIL import Image
 from PIL import ImageDraw2
-from inc import cf
+from pyheatmap.inc import cf
 
 
 class HeatMap(object):
@@ -64,7 +64,7 @@ class HeatMap(object):
         base = base or self.base
 
         if base:
-            self.__im = Image.open(base) if type(base) in (str, unicode) else base
+            self.__im = Image.open(base) if type(base) is str else base
             self.width, self.height = self.__im.size
 
         else:
